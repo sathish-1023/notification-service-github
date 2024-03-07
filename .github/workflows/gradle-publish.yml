@@ -36,11 +36,13 @@ jobs :
       - name: Build with Gradle Wrapper
         run : ./gradlew build
 
+      - name: Updating jar file
+        run: ./gredlew bootJar
 
       - name : Build and Push  into docker
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: sathish1023/notification-service-docker-repo-private
+          image: sathish1023/notification-service-docker-repo-public
           tags : v1.0.2
           registry: docker.io
           enableBuildKit: true
