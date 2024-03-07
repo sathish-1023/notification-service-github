@@ -36,7 +36,7 @@ jobs :
       - name: Build with Gradle Wrapper
         run : ./gradlew build
 
-      - name: Updating jar file
+      - name: Updating jar file and creating jar
         run: ./gradlew bootJar
 
       - name : Build and Push  into docker
@@ -48,6 +48,7 @@ jobs :
           enableBuildKit: true
           multiPlatform: true
           dockerfile: Dockerfile
+          #this is first file
           #          platform: linux/amd64 , linux/arm64, linux/arm/v7
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
