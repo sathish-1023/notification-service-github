@@ -1,4 +1,4 @@
-package com.mrParashurama.Notification_Service.dto;
+package com.mrParashurama.Notification_Service;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
