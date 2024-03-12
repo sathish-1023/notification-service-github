@@ -1,5 +1,5 @@
 package com.mrParashurama.Notification_Service;
-import com.mrParashurama.Notification_Service.dto.OrderPlacedEvent;
+import com.mrParashurama.Notification_Service.OrderPlacedEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +12,6 @@ import org.springframework.kafka.annotation.KafkaListener;
 @Slf4j
 @EnableKafka
 public class NotificationServiceApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(NotificationServiceApplication.class, args);
 	}
@@ -20,7 +19,7 @@ public class NotificationServiceApplication {
 
 	@KafkaListener(topics = "notificationTopic")
 	public void handleNotification(OrderPlacedEvent orderPlacedEvent){
-		log.info("Recieved Notification order is : {} ",orderPlacedEvent.getOrderNumber());
+	log.info("Recieved Notification order is : {} ",orderPlacedEvent.getOrderNumber());
 	}
 
 }
